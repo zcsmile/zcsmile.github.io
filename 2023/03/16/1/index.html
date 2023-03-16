@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>zcsmile</title>
-  <meta name="keywords" content="">
-  <meta name="description" content="zcsmile">
+  <title>逻辑漏洞从任意密码重置开始 | zcsmile</title>
+  <meta name="keywords" content=" 逻辑漏洞 ">
+  <meta name="description" content="逻辑漏洞从任意密码重置开始 | zcsmile">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="BigSwords                                             hljs.initHighlightingOnLoad();                                                   BigSwords">
 <meta property="og:type" content="website">
@@ -54,7 +54,7 @@
 </div>
 
 <body>
-<aside class="nav mobile">
+<aside class="nav">
     <div class="nav-left">
         <a href="/" class="avatar_target">
     <img class="avatar" src="/img/avatar.jpg" />
@@ -281,12 +281,68 @@
         </div>
     </div>
 </aside>
-<div class="post index">
+<div class="post">
     <div class="pjax">
-        <article class="index">
-            <div class="toc-ref">
+        <article id="post-1" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#对渗透测试学习的个人认识"><span class="toc-text">对渗透测试学习的个人认识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#关于BigSwords"><span class="toc-text">关于BigSwords</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#博客平台"><span class="toc-text">博客平台</span></a></li></ol>
+        <h1 class="article-title">逻辑漏洞从任意密码重置开始</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="逻辑漏洞">逻辑漏洞</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">逻辑漏洞</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2023-03-16 17:31:28'>2023-03-16 16:29</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:1.7k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#一、前言"><span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#二、测试流程"><span class="toc-text">二、测试流程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#三、验证码验证不严格"><span class="toc-text">三、验证码验证不严格</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#四、参数污染"><span class="toc-text">四、参数污染</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#五、回显参数修改"><span class="toc-text">五、回显参数修改</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#六、步骤跳跃"><span class="toc-text">六、步骤跳跃</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#七、爆破验证码"><span class="toc-text">七、爆破验证码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#八、修改用户标识"><span class="toc-text">八、修改用户标识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#九、邮箱验证，密保问题验证"><span class="toc-text">九、邮箱验证，密保问题验证</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#十、总结"><span class="toc-text">十、总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -299,34 +355,110 @@
     }
 </style>
 </div>
-            <h2 id="对渗透测试学习的个人认识"><a href="#对渗透测试学习的个人认识" class="headerlink" title="对渗透测试学习的个人认识"></a>对渗透测试学习的个人认识</h2><blockquote>
-<p>第一，渗透测试就是一个信息收集的过程</p>
-</blockquote>
-<blockquote>
-<p>第二，技术的进步一定要不断地进行实战</p>
-</blockquote>
-<blockquote>
-<p>第三，要多了解其他表哥的姿势，并要把别人的思路转化为自己的思路</p>
-</blockquote>
-<p>这些年对网络安全的学习，让我深刻感受到团队的重要性，一个积极活跃的团队可以弥补很多自己的不足，站在巨人的肩上才能看得更远</p>
-<h2 id="关于BigSwords"><a href="#关于BigSwords" class="headerlink" title="关于BigSwords"></a>关于BigSwords</h2><p>17年进入大学开始学习网络安全</p>
-<p>到目前为止已经写了<code class="article_number"></code>篇文章， 共<code class="site_word_count"></code>字。</p>
-<p>本站访问人数：<code class="site_uv"></code>人次 ， 访问量：<code class="site_pv"></code>次</p>
-<h2 id="博客平台"><a href="#博客平台" class="headerlink" title="博客平台"></a>博客平台</h2><p>这个博客通过 <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> 生成，部署在 <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a>，主题 <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank" rel="noopener">3-hexo</a> 已经在github上开源</p>
-<p>主要功能：</p>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h1><p>逻辑漏洞是指由于程序逻辑不严或逻辑太复杂，导致一些逻辑分支不能够正常处理或处理错误，一般出现在任意密码修改（没有旧密码验证）、越权访问、密码找回、交易支付金额等。刚开始接触逻辑漏洞，任意密码重置这块是最适合入手研究的，一般web服务的业务都是从注册账号开始的，注册完成之后就可以进行密码重置的测试，密码重置的逻辑方法多，测试方法简单，漏洞等级高，回报成果大。</p>
+<h1 id="二、测试流程"><a href="#二、测试流程" class="headerlink" title="二、测试流程"></a>二、测试流程</h1><ul>
+<li><p>首先要做的就是账号注册</p>
+<p>一般注册账号都会要求使用手机验证码，</p>
+</li>
+<li><p>接下来就是对验证码这块进行测试</p>
+<p>一般测试方向为改手机号接受验证码，在使用另一个手机号组合接受到的验证码进行测试，如果注册成功，就是任意手机号注册，证明网站对手机验证码的校验不严格，验证码和手机号没有做强绑定。</p>
+<p>那么根据网站的逻辑，那么很可能全站都存在验证码校验不严格的问题，那密码重置这块使用同样的方法就很有可能存在任意密码重置。这时就需要放一放刚才发现的任意手机号注册，直奔忘记密码去（一般src对任意手机号注册的评级都不高）</p>
+</li>
+<li><p>接下来测试忘记密码的功能</p>
+<p>到了忘记密码这里，我们首先要做的就是走一遍流程，查看一下密码重置的流程，不同的网站的流程是不同的，这对是否存在密码重置起着决定性作用</p>
+<p>一般流程分为两种</p>
 <ul>
-<li>搜索支持文章标题、标签(#标签)、作者(@作者)</li>
-<li>pad/手机等移动端适配</li>
-<li>页面全局快捷键 <a href='http://yelog.org/2017/03/24/3-hexo-shortcuts/' target="_blank" rel="noopener">3-hexo快捷键说明</a></li>
+<li><p>A:  1.输入帐号-&gt;2.验证账号-&gt;3.重置密码-&gt;4.成功（验证信息和新密码分开发送）</p>
+</li>
+<li><p>B:  1.输入帐号-&gt;2.验证账号+重置密码-&gt;3.成功（验证信息和新密码一起发送）</p>
+</li>
 </ul>
+</li>
+</ul>
+<h1 id="三、验证码验证不严格"><a href="#三、验证码验证不严格" class="headerlink" title="三、验证码验证不严格"></a>三、验证码验证不严格</h1><p><strong>在我们要接收验证码前抓包</strong></p>
+<img src="/img/1/1.png">
 
-        </article>
-        
-        <p>
-            <a  class="dashang" onclick="dashangToggle()">赏</a>
-        </p>
-        
-        
+<p>将数据包手机号更改为可以接受验证码的手机号，然后发包走正常流程这里推荐一个接受验证码的网站，解决手机号不够用的情况 <a href="https://www.pdflibr.com/" target="_blank" rel="noopener">https://www.pdflibr.com/</a></p>
+<img src="/img/1/2.png">
+
+<p><strong>重置成功后立马交洞（重置成功以账号可登录为准），交完之后还回到这里，要开始一洞多吃了</strong></p>
+<p>验证码验证不严格造成的结果就是整个网站接收到的验证码可能是通用的我们再走一次流程，这次拿自己的手机号，拿到验证码之后回到前面，换一个目标账号，用刚才的验证码再来一次，成功了，ok又一个洞到手了。以为这就完了？马上去注册的地方，同样走流程，拿到验证码后去重置密码，又成功了？不用再说了全站去找接受验证码的地方</p>
+<h1 id="四、参数污染"><a href="#四、参数污染" class="headerlink" title="四、参数污染"></a>四、参数污染</h1><p>这个方法就要简单好多了，同上面要接收验证码前抓包，但不是改手机号，而是加一个手机号增加一个相同的字段，用可以接受验证码的手机号，如果两个手机都接受到了验证码，并且验证码相同，那么基本上就稳了，但也会有失败的情况。</p>
+<h1 id="五、回显参数修改"><a href="#五、回显参数修改" class="headerlink" title="五、回显参数修改"></a>五、回显参数修改</h1><p>这个方法有两个前提</p>
+<ol>
+<li><strong>符合流程A:  1.输入帐号-&gt;2.验证账号-&gt;3.重置密码-&gt;4.成功（验证信息和新密码分开发送）</strong></li>
+<li><strong>回显参数无随机参数的验证</strong></li>
+</ol>
+<p>发包后即可跳到下一步输入新密码，有的网站会存在返回并验证一个随机值如图，这种情况就不行了</p>
+<img src="/img/1/3.png">
+
+<p>  <strong>有些网站可能会将验证码放在回显包里一起发给浏览器</strong>   </p>
+<img src="/img/1/4.png">
+
+<h1 id="六、步骤跳跃"><a href="#六、步骤跳跃" class="headerlink" title="六、步骤跳跃"></a>六、步骤跳跃</h1><p>这种方法类似于改状态码的目的，在于跳过验证账号这一步同样走一遍流程，在到最后一步提交新密码时抓包复制这个包的包头换目标账号，在提交验证码时抓包，把包头修改为刚才复制的包头，发包，成功的情况是浏览器会跳到输入新密码的页面**<br><strong>复制正常流程包头如下图</strong></p>
+<img src="/img/1/5.png">
+
+<p><strong>下图为验证码包</strong>   </p>
+<img src="/img/1/6.png">
+
+<p><strong>将包头替换，最好是把字段也加上</strong>   </p>
+<img src="/img/1/7.png">
+
+<p><strong>页面跳到了最后一步，再输入密码进行重置</strong>   </p>
+<img src="/img/1/8.png">
+
+<h1 id="七、爆破验证码"><a href="#七、爆破验证码" class="headerlink" title="七、爆破验证码"></a>七、爆破验证码</h1><p><strong>在这里推荐对四位数验证码进行爆破</strong></p>
+<p>提交验证码时抓包</p>
+<p>burp右键发送到intruder,点击Positions设置参数，点击Payloads设置字典，点击Options设置线程，点击start开始爆破</p>
+<img src="/img/1/9.png">
+
+<img src="/img/1/10.png">
+
+<img src="/img/1/11.png">
+
+<img src="/img/1/12.png">
+
+<p>爆破完成后点击Length，按返回包长度排序，找到和其他长度不同的包，查看状态码确认，如图，两个包状态码都为1，有两个是因为这个站又一个万能验证码9527   </p>
+<img src="/img/1/13.png">
+
+<h1 id="八、修改用户标识"><a href="#八、修改用户标识" class="headerlink" title="八、修改用户标识"></a>八、修改用户标识</h1><p><strong>通过上述几种方法或正常流程到达最后一步后，在需要提交新密码时，数据包中可能会有用户标识的字段，通过修改用户标识为目标账号后再发包即可重置其他账号密码</strong></p>
+<img src="/img/1/14.png">
+
+<p><strong>但也有可能当前数据包绑定了账号无法通过修改id改密码</strong></p>
+<p><strong>此时可以尝试一些删除包中的其他一些参数，就可能早造成服务器无法校验用户标识，直接重置成功</strong> </p>
+<img src="/img/1/15.png">
+
+<h1 id="九、邮箱验证，密保问题验证"><a href="#九、邮箱验证，密保问题验证" class="headerlink" title="九、邮箱验证，密保问题验证"></a>九、邮箱验证，密保问题验证</h1><p>邮箱验证大致和手机验证码一样，不过有一个通过链接重置同样走一遍正确流程，观察邮箱收到的链接链接一般会有时间戳，用户表识等构成，通过构造链接访问修改密码界面，在完成账号验证时，也可能是生成一个链接跳转到提交密码界面，同样可以通过构造链接，访问修改密码界面<br><strong>密保问题，同样可以使用修改状态码，或者是结合越权修改别人的密保问题</strong></p>
+<h1 id="十、总结"><a href="#十、总结" class="headerlink" title="十、总结"></a>十、总结</h1><p>逻辑漏洞复杂，且又灵活多变，测试一定结合网站逻辑灵活变动自己的测试方向，每一个方向都可能带来巨大的收获</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1975763359@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>逻辑漏洞从任意密码重置开始</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">1.7k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="zcsmile">zcsmile</a></p>
+    <p><span class="copy-title">发布时间:</span>2023-03-16, 16:29:08</p>
+    <p><span class="copy-title">最后更新:</span>2023-03-16, 17:31:28</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2023/03/16/1/" title="逻辑漏洞从任意密码重置开始">https://zcsmile.github.io/2023/03/16/1/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
     <div id="comments"></div>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 
@@ -346,6 +478,13 @@
         gitalk.render('comments')
     })
 </script>
+
+
+
+
+    
+
+
 
 
     </div>

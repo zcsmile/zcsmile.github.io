@@ -145,7 +145,7 @@
     
         
             
-            <li><div data-rel="逻辑漏洞">逻辑漏洞<small>(1)</small></div>
+            <li><div data-rel="应用漏洞">应用漏洞<small>(1)</small></div>
                 
             </li>
             
@@ -153,7 +153,7 @@
     
         
             
-            <li><div data-rel="应用漏洞">应用漏洞<small>(1)</small></div>
+            <li><div data-rel="逻辑漏洞">逻辑漏洞<small>(1)</small></div>
                 
             </li>
             
@@ -214,15 +214,15 @@
     <div class="tags-list">
     
     <li class="article-tag-list-item">
-        <a class="color5">逻辑漏洞</a>
-    </li>
-    
-    <li class="article-tag-list-item">
         <a class="color4">深信服</a>
     </li>
     
     <li class="article-tag-list-item">
         <a class="color3">应用</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">逻辑漏洞</a>
     </li>
     
     <li class="article-tag-list-item">
@@ -239,6 +239,14 @@
     
     <nav id="title-list-nav">
         
+        <a  class="应用漏洞 "
+           href="/2020/10/09/5/"
+           data-tag="深信服,应用"
+           data-author="" >
+            <span class="post-title" title="深信服应用漏洞总结">深信服应用漏洞总结</span>
+            <span class="post-date" title="2020-10-09 11:04:08">2020/10/09</span>
+        </a>
+        
         <a  class="逻辑漏洞 "
            href="/2023/03/16/1/"
            data-tag="逻辑漏洞"
@@ -253,14 +261,6 @@
            data-author="" >
             <span class="post-title" title="文章发布">文章发布</span>
             <span class="post-date" title="2020-09-28 22:10:22">2020/09/28</span>
-        </a>
-        
-        <a  class="应用漏洞 "
-           href="/2020/10/09/5/"
-           data-tag="深信服,应用"
-           data-author="" >
-            <span class="post-title" title="深信服应用漏洞总结">深信服应用漏洞总结</span>
-            <span class="post-date" title="2020-10-09 11:04:08">2020/10/09</span>
         </a>
         
         <a  class="CMS漏洞 "
@@ -534,7 +534,7 @@
     /*作者、标签的自动补全*/
     $(function () {
         $('.search').AutoComplete({
-            'data': ['#逻辑漏洞','#深信服','#应用','#dede','#cms',],
+            'data': ['#深信服','#应用','#逻辑漏洞','#dede','#cms',],
             'itemHeight': 20,
             'width': 418
         }).AutoComplete('show');

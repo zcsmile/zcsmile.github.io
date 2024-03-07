@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>常见组件及OA系统的指纹识别（中） | zcsmile</title>
+  <meta name="keywords" content=" 指纹识别 ">
+  <meta name="description" content="常见组件及OA系统的指纹识别（中） | zcsmile">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="BigSwords                                             hljs.initHighlightingOnLoad();                                                   BigSwords">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zcsmile">
+<meta property="og:url" content="https:&#x2F;&#x2F;zcsmile.github.io&#x2F;zcsmile.github.io&#x2F;index.html">
+<meta property="og:site_name" content="zcsmile">
+<meta property="og:description" content="BigSwords                                             hljs.initHighlightingOnLoad();                                                   BigSwords">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;zcsmile.github.io&#x2F;img&#x2F;avatar.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zcsmile.github.io&#x2F;img&#x2F;alipay.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;zcsmile.github.io&#x2F;img&#x2F;weixin.jpg">
+<meta property="og:updated_time" content="2021-08-31T08:04:40.509Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;zcsmile.github.io&#x2F;img&#x2F;avatar.jpg">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>zcsmile</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+        <a title="github" href="https://github.com/zcsmile" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+        <a title="qq" href="http://wpa.qq.com/msgrd?v=3&uin=1975763359&site=qq&menu=yes" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-qq"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+    
+        
+    
+        
+        <a title="bilibili" href="https://space.bilibili.com/392962411?spm_id_from=333.33.b_73656375726974794f75744c696e6b.1" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-bilibili"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="zone.secevery" href="http://zone.secevery.com/people/BigSwords" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-zone.secevery"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(9)</small></div></li>
+    
+        
+            
+            <li><div data-rel="移动安全">移动安全<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="逻辑漏洞">逻辑漏洞<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="工具使用">工具使用<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="应用漏洞">应用漏洞<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="信息收集">信息收集<small>(2)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="CMS漏洞">CMS漏洞<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+        
+            
+            <li><div data-rel="红队攻防">红队攻防<small>(1)</small></div>
+                
+            </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div><a class="about  hasFriend  site_url"  href="/about">关于</a><a style="width: 50%"  class="friends">友链</a></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="9">
+<input type="hidden" id="yelog_site_word_count" value="14.3k">
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="http://zone.secevery.com/people/BigSwords">塞克社区</a></li>
+            
+            <li><a target="_blank" href="https://www.bugbank.cn/u/zcsmile">漏洞银行</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode==13){return false;}">
+        <input class="search" type="text" placeholder="Search..." autocomplete="off"id="local-search-input" >
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color2">移动安全工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">逻辑漏洞</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">Docker</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">工具</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">深信服</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">应用</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">指纹识别</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">dede</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color4">cms</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">红队</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">钓鱼</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="移动安全 "
+           href="/2024/03/07/10/"
+           data-tag="移动安全工具"
+           data-author="" >
+            <span class="post-title" title="基于Magisk(面具)部署的Xposed框架">基于Magisk(面具)部署的Xposed框架</span>
+            <span class="post-date" title="2024-03-07 15:29:38">2024/03/07</span>
+        </a>
+        
+        <a  class="逻辑漏洞 "
+           href="/2023/03/16/1/"
+           data-tag="逻辑漏洞"
+           data-author="" >
+            <span class="post-title" title="逻辑漏洞从任意密码重置开始">逻辑漏洞从任意密码重置开始</span>
+            <span class="post-date" title="2023-03-16 16:29:08">2023/03/16</span>
+        </a>
+        
+        <a  class="工具使用 "
+           href="/2024/03/07/7/"
+           data-tag="Docker,工具"
+           data-author="" >
+            <span class="post-title" title="零学习成本使用Docker搭建靶场">零学习成本使用Docker搭建靶场</span>
+            <span class="post-date" title="2024-03-07 15:24:58">2024/03/07</span>
+        </a>
+        
+        <a  class="应用漏洞 "
+           href="/2020/10/09/5/"
+           data-tag="深信服,应用"
+           data-author="" >
+            <span class="post-title" title="深信服应用漏洞总结">深信服应用漏洞总结</span>
+            <span class="post-date" title="2020-10-09 11:04:08">2020/10/09</span>
+        </a>
+        
+        <a  class="信息收集 "
+           href="/2024/03/07/8/"
+           data-tag="指纹识别"
+           data-author="" >
+            <span class="post-title" title="常见组件及OA系统的指纹识别（上）">常见组件及OA系统的指纹识别（上）</span>
+            <span class="post-date" title="2024-03-07 15:27:28">2024/03/07</span>
+        </a>
+        
+        <a  class="信息收集 "
+           href="/2024/03/07/9/"
+           data-tag="指纹识别"
+           data-author="" >
+            <span class="post-title" title="常见组件及OA系统的指纹识别（中）">常见组件及OA系统的指纹识别（中）</span>
+            <span class="post-date" title="2024-03-07 15:28:34">2024/03/07</span>
+        </a>
+        
+        <a  class="CMS漏洞 "
+           href="/2019/12/05/3/"
+           data-tag="dede,cms"
+           data-author="" >
+            <span class="post-title" title="织梦内容管理系统(DedeCMS)漏洞集合">织梦内容管理系统(DedeCMS)漏洞集合</span>
+            <span class="post-date" title="2019-12-05 14:58:23">2019/12/05</span>
+        </a>
+        
+        <a  class=""
+           href="/2020/09/28/hello-world/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="文章发布">文章发布</span>
+            <span class="post-date" title="2020-09-28 22:10:22">2020/09/28</span>
+        </a>
+        
+        <a  class="红队攻防 "
+           href="/2024/03/06/6/"
+           data-tag="红队,钓鱼"
+           data-author="" >
+            <span class="post-title" title="gophish钓鱼邮件平台搭建">gophish钓鱼邮件平台搭建</span>
+            <span class="post-date" title="2024-03-06 15:00:37">2024/03/06</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-9" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">常见组件及OA系统的指纹识别（中）</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="信息收集">信息收集</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color5">指纹识别</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2024-03-07 15:29:06'>2024-03-07 15:28</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        <span>字数:2.1k</span>
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+        <span class="top-comment" title="跳转至评论区">
+            <a href="#comments">
+                评论:<span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </a>
+        </span>
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二、常见OA系统"><span class="toc-text">二、常见OA系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、泛微OA"><span class="toc-text">1、泛微OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、万户OA"><span class="toc-text">2、万户OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3、蓝凌OA"><span class="toc-text">3、蓝凌OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4、用友OA"><span class="toc-text">4、用友OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5、致远OA"><span class="toc-text">5、致远OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6、通达OA"><span class="toc-text">6、通达OA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7、若依"><span class="toc-text">7、若依</span></a></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="二、常见OA系统"><a href="#二、常见OA系统" class="headerlink" title="二、常见OA系统"></a>二、常见OA系统</h1><h2 id="1、泛微OA"><a href="#1、泛微OA" class="headerlink" title="1、泛微OA"></a>1、泛微OA</h2><hr>
+<p>泛微协同管理应用平台e-cology是一套兼具企业信息门户、知识文档管理、工作流程管理、人力资源管理、客户关系管理、项目管理、财务管理、资产管理、供应链管理、数据中心功能的企业大型协同管理平台。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;泛微-协同商务系统&quot;、app&#x3D;&quot;泛微-协同办公OA&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Hunter：title&#x3D;&#x3D;&quot;泛微-协同软件的精英团队，我们的目标：造就协同软件第一品牌！&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690446066901.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>特征关键字段：<code>weaver</code></strong></p>
+<blockquote>
+<p>段落引用</p>
+</blockquote>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">E-Eoffice 系列漏洞:</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;general&#x2F;index&#x2F;UploadFile.php             文件上传1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;inc&#x2F;jquery&#x2F;uploadify&#x2F;uploadify.php      文件上传2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;webservice&#x2F;upload&#x2F;upload.php          文件上传3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;webservice-json&#x2F;upload&#x2F;upload.php   文件上传4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;webservice-xml&#x2F;upload&#x2F;upload.php    文件上传5</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;eoffice10&#x2F;server&#x2F;public&#x2F;iWebOffice2015&#x2F;OfficeServer.php    文件上传6</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;inc&#x2F;group_user_list&#x2F;group_xml.php      文件写入1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">[+]   &#x2F;general&#x2F;charge&#x2F;charge_list&#x2F;do_excel.php    文件写入2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">E-Weaver 系列漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">[+]   泛微 weaver.common.Ctrl&#x2F;.css     文件上传1</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">[+]   泛微 weaver uploadFileClient.jsp 文件上传2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">[+]   泛微 weaver KtreeUploadAction    文件上传3</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">[+]   泛微 weaver uploaderOperate.jsp 文件上传4</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">泛微OA 任意登陆管理员用户</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">泛微 e-cology WorkflowServiceXml 内存马注入</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+<h2 id="2、万户OA"><a href="#2、万户OA" class="headerlink" title="2、万户OA"></a>2、万户OA</h2><hr>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;万户网络-ezOFFICE&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690446758546.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/8/1/1690853868184.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>特征字段：<code>defaultroot</code></strong></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">DownloadServlet 任意文件读取漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">download_ftp.jsp 任意文件下载漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">officeserverservlet + attachmentserver 可getshell</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">download_old.jsp 任意文件下载漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">smartUpload.jsp 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">fileUpload.controller 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+<h2 id="3、蓝凌OA"><a href="#3、蓝凌OA" class="headerlink" title="3、蓝凌OA"></a>3、蓝凌OA</h2><hr>
+<p>蓝凌是国内数字化办公专业服务商,阿里钉钉唯一投资的OA厂商,阿里云知识管理与协同领域首家战略合作伙伴。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;Landray-OA系统&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/8/1/1690853996839.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690447082228.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>路径特征关键字段：<code>sys</code></strong></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;ui&#x2F;extend&#x2F;varkind&#x2F;custom.jsp            文件读取</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">admin.do                                     反序列化&#x2F;JNDI注入&#x2F;任意文件读取</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;search&#x2F;sys_search_main&#x2F;sysSearchMain.do XMLdecode反序列化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;common&#x2F;dataxml.jsp                      代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;common&#x2F;treexml.jsp                      代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;common&#x2F;treejson.jsp                     代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;common&#x2F;datajson.jsp                     代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">&#x2F;data&#x2F;sys-common&#x2F;dataxml                     代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#x2F;data&#x2F;sys-common&#x2F;treexml                     代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">&#x2F;data&#x2F;sys-common&#x2F;datajson                    代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#x2F;tic&#x2F;core&#x2F;resource&#x2F;js&#x2F;erp_data.jsp           代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">&#x2F;sys&#x2F;common&#x2F;debug.jsp                        代码执行</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+<h2 id="4、用友OA"><a href="#4、用友OA" class="headerlink" title="4、用友OA"></a>4、用友OA</h2><hr>
+<p>用友软件提供的产品包括企业资源规划（ERP）软件、人力资源管理（HRM）软件、供应链管理（SCM）软件、财务管理（FM）软件、客户关系管理（CRM）软件、生产制造（MES）软件、项目管理（EPM）软件等。这些软件可以根据企业的需求，提供全面的业务流程管理、数据分析、决策支持等功能。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：title&#x3D;&quot;用友U8-OA&quot;、app&#x3D;&quot;用友-NC-Cloud&quot;、title&#x3D;&quot;用友GRP-U8行政事业内控管理软件&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Hunter：web.body&#x3D;&quot;uap&#x2F;rbac&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong></p>
+<p><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690447797444.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690448291049.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">用友 NC bsh.servlet.BshServlet 远程命令执行漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">用友 U8 OA getSessionList.jsp 敏感信息泄漏漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">用友 ERP-NC NCFindWeb 目录遍历漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">用友 GRP-U8 UploadFileData 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">用友 GRP-U8 Proxy SQL注入</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">用友 U8 OA test.jsp SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">用友 Uapjs JNDI注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通T-CRM get_usedspace.php SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通T+ Upload.aspx 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通T+ RecoverPassword.aspx 管理员密码修改漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">用友 ServiceDispatcherServlet 反序列化漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">用友 时空KSOA com.sksoft.bill.ImageUpload 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">用友 GRP-U8 U8AppProxy 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">用友 某jsp JNDI注入漏洞 一</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">用友 某jsp JNDI注入漏洞 二</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">用友 sync 反序列化漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">用友 uapws 认证绕过漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">18</span></pre></td><td class="code"><pre><span class="line">用友 ajax JNDI注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">19</span></pre></td><td class="code"><pre><span class="line">用友 文件服务器 认证绕过漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">20</span></pre></td><td class="code"><pre><span class="line">用友 文件服务器 未授权访问漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">21</span></pre></td><td class="code"><pre><span class="line">用友 files 反序列化漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">22</span></pre></td><td class="code"><pre><span class="line">用友 文件服务器 反序列化漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">23</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通T+ DownloadProxy任意文件读取漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">24</span></pre></td><td class="code"><pre><span class="line">用友 GRP U8 XXNode SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">25</span></pre></td><td class="code"><pre><span class="line">用友 GRP U8 forgetPassword_old.jsp SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">26</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通 ajaxpro 反序列化漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">27</span></pre></td><td class="code"><pre><span class="line">用友 畅捷通 Controller SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">28</span></pre></td><td class="code"><pre><span class="line">用友 NC FileReceiveServlet反序列化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">29</span></pre></td><td class="code"><pre><span class="line">用友 NCcloud accept任意文件上传</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">30</span></pre></td><td class="code"><pre><span class="line">用友 NC MessageServlet反序列化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">31</span></pre></td><td class="code"><pre><span class="line">用友 NC UploadServlet反序列化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">32</span></pre></td><td class="code"><pre><span class="line">用友 NC MonitorServlet反序列化</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">33</span></pre></td><td class="code"><pre><span class="line">用友 NC service 接口信息泄露漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">34</span></pre></td><td class="code"><pre><span class="line">用友 NC IUpdateService XXE漏洞漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">35</span></pre></td><td class="code"><pre><span class="line">用友 FE协作办公平台 templateOfTaohong_manager目录遍历漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">36</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+<h2 id="5、致远OA"><a href="#5、致远OA" class="headerlink" title="5、致远OA"></a>5、致远OA</h2><hr>
+<p>致远互联秉持“以人为中心”的产品设计理念，坚持平台化产品发展路线，基于“组织行为管理”理论，运用新一代信息技术，自主研发了V5协同管理平台，开发了面向中小企业组织的A6+产品 [5]，面向中大型企业和集团性企业组织的A8+产品，以及面向政府组织及事业单位的G6产品 。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;致远互联-OA&quot;、app&#x3D;&quot;致远A8&quot;、app&#x3D;&quot;致远A6&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690449696156.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690449992005.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/7/27/1690450397954.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>特征关键字段：<code>seeyon</code></strong></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">信息泄露：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">致远OA A8 状态监控页面信息泄露</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">致远OA A6 initDataAssess.jsp 用户敏感信息泄露</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">致远OA A6 createMysql.jsp 数据库敏感信息泄露</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">致远OA A6 DownExcelBeanServlet 用户敏感信息泄露</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">致远OA getSessionList.jsp Session泄漏漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">SQL注入：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">致远OA A6 setextno.jsp SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">致远OA A6 test.jsp SQL注入漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">文件上传：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">致远OA ajax.do 登录绕过&amp;任意文件上传</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">致远OA Session泄露&amp;任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">任意文件下载：</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">致远OA webmail.do任意文件下载</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+<h2 id="6、通达OA"><a href="#6、通达OA" class="headerlink" title="6、通达OA"></a>6、通达OA</h2><hr>
+<p>通达OA（Office Anywhere网络智能办公系统）是由北京通达信科科技有限公司自主研发的协同办公自动化软件，是与中国企业管理实践相结合形成的综合管理办公平台。通达OA为各行业不同规模的众多用户提供信息化管理能力，包括流程审批、行政办公、日常事务、数据统计分析、即时通讯、移动办公等，帮助广大用户降低沟通和管理成本，提升生产和决策效率。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;TDXK-通达OA&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/8/1/1690852619818.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/8/1/1690852694577.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>特征关键字段：<code>general</code></strong></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">通达OA v2014 get_contactlist.php 敏感信息泄漏</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">通达OA v2017 video_file.php 任意文件下载</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">通达OA v2017 action_upload.php 任意文件上传</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">通达OA v2017 login_code.php 任意用户登录</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">通达OA v11 login_code.php 任意用户登录</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">通达OA v11.5 swfupload_new.php SQL注入</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">通达OA v11.6 report_bi.func.php SQL注入</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">通达OA v11.8 api.ali.php 任意文件上传漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">通达OA v11.8 gateway.php 远程文件包含漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">通达OA v11.6 print.php未授权删除auth.inc.php导致RCE</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">通达OA v11.10 getdata 任意文件上传</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+
+<h2 id="7、若依"><a href="#7、若依" class="headerlink" title="7、若依"></a>7、若依</h2><hr>
+<p>RuoYi 是一个 Java EE 企业级快速开发平台，基于经典技术组合（Spring Boot、Apache Shiro、MyBatis、Thymeleaf、Bootstrap），内置模块如：部门管理、角色用户、菜单及按钮授权、数据权限、系统参数、日志管理、通知公告等。在线定时任务配置；支持集群，支持多数据源，支持分布式事务。</p>
+<hr>
+<p><strong>测绘指纹：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">fofa：app&#x3D;&quot;若依-管理系统&quot;&amp;&amp;body&#x3D;&quot;admin&quot;</span></pre></td></tr></table></figure>
+<p><strong>图标：</strong><br><img src="https://secevery.oss-cn-beijing.aliyuncs.com/images/article/2023/8/1/1690854344938.png?x-oss-process=style/ImageWaterMark_V1.0" alt=""></p>
+<p><strong>特征关键字段：<code>general</code></strong></p>
+<p><strong>可能存在漏洞：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">thymeleaf模板注入代码执行漏洞</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Shiro阻止权限绕过漏洞 RuoYi &lt;&#x3D; v4.3.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">Fastjson高危漏洞 RuoYi &lt;&#x3D; v4.2.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">SQL注入攻击 RuoYi &lt;&#x3D; v3.2.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">Shiro命令执行漏洞 RuoYi &lt;&#x3D; v4.3.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">Spring Framework反射型文件下载漏洞 RuoYi &lt; v4.5.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">任意文件下载漏洞 RuoYi &lt;&#x3D; v4.5.0</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">存在远程执行漏洞 RuoYi &lt;&#x3D; v4.6.2</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">......</span></pre></td></tr></table></figure>
+
+<p>​                                                                                                                                                                </p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 1975763359@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">赏</a>
+</p>
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>常见组件及OA系统的指纹识别（中）</p>
+    <p><span class="copy-title">文章字数:</span><span class="post-count">2.1k</span></p>
+    <p><span class="copy-title">本文作者:</span><a  title="zcsmile">zcsmile</a></p>
+    <p><span class="copy-title">发布时间:</span>2024-03-07, 15:28:34</p>
+    <p><span class="copy-title">最后更新:</span>2024-03-07, 15:29:06</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2024/03/07/9/" title="常见组件及OA系统的指纹识别（中）">https://zcsmile.github.io/2024/03/07/9/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+    <div id="comments"></div>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+
+<script type="text/javascript">
+    $.getScript('/js/gitalk.js', function () {
+        var gitalk = new Gitalk({
+            clientID: '097704573522ace06b28',
+            clientSecret: '29ce75f1490b2b495a00e9adf99f0791875b2a0a',
+            repo: 'zcsmile.github.io',
+            owner: 'zcsmile',
+            admin: ['zcsmile'],
+            id: decodeURI(location.pathname),
+            distractionFreeMode: 'true',
+            language: 'zh-CN',
+            perPage: parseInt('10',10)
+        })
+        gitalk.render('comments')
+    })
+</script>
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">©2016-2023 Zcsmile</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>喜欢就点赞,疼爱就打赏</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">支付宝</label></span><span><label><input type="radio" name="pay" value="weixin">微信</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['#移动安全工具','#逻辑漏洞','#Docker','#工具','#深信服','#应用','#指纹识别','#dede','#cms','#红队','#钓鱼',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+        $('pre code').each(function(){
+            var lines = $(this).text().split('\n').length - 1, widther='';
+            if (lines>99) {
+                widther = 'widther'
+            }
+            var $numbering = $('<ul/>').addClass('pre-numbering ' + widther).attr("unselectable","on");
+            $(this).addClass('has-numbering ' + widther)
+                    .parent()
+                    .append($numbering);
+            for(var i=1;i<=lines;i++){
+                $numbering.append($('<li/>').text(i));
+            }
+        });
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<style>
+    pre{
+        position: relative;
+        margin-bottom: 24px;
+        border-radius: 10px;
+        border: 1px solid #e2dede;
+        background: #FFF;
+        overflow: hidden;
+    }
+    code.has-numbering{
+        margin-left: 30px;
+    }
+    code.has-numbering.widther{
+        margin-left: 35px;
+    }
+    .pre-numbering{
+        margin: 0px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 20px;
+        padding: 0.5em 3px 0.7em 5px;
+        border-right: 1px solid #C3CCD0;
+        text-align: right;
+        color: #AAA;
+        background-color: #fafafa;
+    }
+    .pre-numbering.widther {
+        width: 35px;
+    }
+</style>
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 492px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background: url("https://i.loli.net/2019/07/22/5d3521411f3f169375.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
